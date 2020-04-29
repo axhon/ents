@@ -1,11 +1,13 @@
-import { Resolver, Query, Mutation, Arg } from 'type-graphql'
+import { Resolver, Query, Mutation, Arg, UseMiddleware } from 'type-graphql'
 import { User } from '../../entities/User'
 import { RegistInput } from './RegisterInput'
 import Argon from 'argon2'
+import { isAuthorized } from '../middleware/IsAuthorized'
 
 @Resolver()
 export class RegisterResolver {
   @Query(() => String)
+  @UseMiddleware(isAuthorized)
   async hello() {
     return 'hello world'
   }
