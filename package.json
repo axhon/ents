@@ -8,6 +8,8 @@
   },
   "private": true,
   "dependencies": {
+    "@types/nodemailer": "^6.4.0",
+    "@types/uuid": "^7.0.3",
     "apollo-server-express": "^2.12.0",
     "argon2": "^0.26.2",
     "class-validator": "^0.12.1",
@@ -17,10 +19,12 @@
     "express-session": "^1.17.1",
     "graphql": "^14.1.1",
     "ioredis": "^4.16.3",
+    "nodemailer": "^6.4.6",
     "pg": "^8.0.3",
     "reflect-metadata": "^0.1.13",
     "type-graphql": "^0.17.6",
-    "typeorm": "^0.2.24"
+    "typeorm": "^0.2.24",
+    "uuid": "^7.0.3"
   },
   "devDependencies": {
     "@types/connect-redis": "0.0.13",

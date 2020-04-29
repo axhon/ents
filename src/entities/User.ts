@@ -25,6 +25,9 @@ export class User extends BaseEntity {
   @Column('text', { unique: true })
   email: string
 
+  @Column({ default: false })
+  confirmed: boolean
+
   @Column()
   password: string
 }

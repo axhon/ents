@@ -3,6 +3,8 @@ import { User } from '../../entities/User'
 import { RegistInput } from './RegisterInput'
 import Argon from 'argon2'
 import { isAuthorized } from '../middleware/IsAuthorized'
+import { sendConfirmationEmail } from './SendConfirmationEmail'
+import createConfirmationUrl from '../registration/createConfirmationUrl'
 
 @Resolver()
 export class RegisterResolver {
@@ -23,6 +25,8 @@ export class RegisterResolver {
       email,
       password: hashedPassword,
     }).save()
+
+    await sendConfirmationEmail(email, await createConfirmationUrl(user.id))
     return user
   }
 }

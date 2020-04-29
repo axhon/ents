@@ -9,11 +9,13 @@ import connectRedis from 'connect-redis'
 import { redis } from './redis'
 import cors from 'cors'
 import { LoginResolver } from './modules/user/Login'
+import { sendConfirmationEmail } from './modules/user/SendConfirmationEmail'
+import { ConfirmationResolver } from './modules/registration/Confirmation'
 
 async function main() {
   await createConnection()
   const schema = await buildSchema({
-    resolvers: [RegisterResolver, LoginResolver],
+    resolvers: [RegisterResolver, LoginResolver, ConfirmationResolver],
   })
 
   const apolloServer = new ApolloServer({
