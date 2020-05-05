@@ -15,7 +15,7 @@ import { ConfirmationResolver } from './modules/registration/Confirmation'
 async function main() {
   await createConnection()
   const schema = await buildSchema({
-    resolvers: [RegisterResolver, LoginResolver, ConfirmationResolver],
+    resolvers: [`${__dirname}/modules/**/*.ts`],
   })
 
   const apolloServer = new ApolloServer({
@@ -56,4 +56,4 @@ async function main() {
   })
 }
 
-main()
+main().catch(console.error)

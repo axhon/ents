@@ -1,13 +1,14 @@
 import { Resolver, Mutation, Arg } from 'type-graphql'
 import { User } from '../../entities/User'
 import { redis } from '../../redis'
+import { createConfirmationToken } from './createConfirmationUrl'
 
 @Resolver()
 export class ConfirmationResolver {
   @Mutation(() => Boolean)
   async confirmUser(@Arg('token') token: string): Promise<boolean> {
     try {
-      const userId = await redis.get(token)
+      const userId = await redis.get(createConfirmationToken(token))
       if (!userId) {
         // likely need to create a new confirmation email at this point
         // @todo the thing, a button on frontend to send new email
