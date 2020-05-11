@@ -1,6 +1,6 @@
 import { Resolver, Mutation, Arg } from 'type-graphql'
-import { User } from '../../entities/User'
-import { redis } from '../../redis'
+import { User } from '../../../entities/User'
+import { redis } from '../../../redis'
 import { createConfirmationToken } from './createConfirmationUrl'
 
 @Resolver()

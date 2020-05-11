@@ -12,7 +12,6 @@ export class ChangePasswordResolver {
     @Arg('data') { token, password }: ChangePasswordInput
   ): Promise<User | null> {
     try {
-      console.log(password)
       const id = await redis.get(createRecoverPasswordToken(token))
 
       if (!id) {

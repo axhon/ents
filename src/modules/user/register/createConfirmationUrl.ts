@@ -1,6 +1,6 @@
 import { v4 } from 'uuid'
-import { redis } from '../../redis'
-import { REGISTRATION_PREFIX } from '../constants/redisPrefixes'
+import { redis } from '../../../redis'
+import { REGISTRATION_PREFIX } from '../../../constants/redisPrefixes'
 
 export function createConfirmationToken(token: string) {
   return `${REGISTRATION_PREFIX}${token}`

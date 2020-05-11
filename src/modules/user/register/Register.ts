@@ -1,9 +1,9 @@
 import { Resolver, Query, Mutation, Arg, UseMiddleware } from 'type-graphql'
-import { User } from '../../entities/User'
+import { User } from '../../../entities/User'
 import { RegistInput } from './RegisterInput'
 import Argon from 'argon2'
-import { isAuthorized } from '../middleware/IsAuthorized'
-import { sendConfirmationEmail } from '../user/SendConfirmationEmail'
+import { isAuthorized } from '../../middleware/IsAuthorized'
+import { sendConfirmationEmail } from '../SendConfirmationEmail'
 import createConfirmationUrl from './createConfirmationUrl'
 
 @Resolver()

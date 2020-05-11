@@ -1,7 +1,7 @@
 import { Length, IsEmail } from 'class-validator'
 import { InputType, Field } from 'type-graphql'
 import { IsEmailAlreadyExists } from './IsEmailAlreadyExists'
-import { PasswordInput } from '../user/password/PasswordInput'
+import { PasswordInput } from '../password/PasswordInput'
 
 @InputType()
 export class RegistInput extends PasswordInput {
