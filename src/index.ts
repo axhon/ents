@@ -4,13 +4,9 @@ import session from 'express-session'
 import { ApolloServer } from 'apollo-server-express'
 import { buildSchema } from 'type-graphql'
 import { createConnection } from 'typeorm'
-import { RegisterResolver } from './modules/user/Register'
 import connectRedis from 'connect-redis'
 import { redis } from './redis'
 import cors from 'cors'
-import { LoginResolver } from './modules/user/Login'
-import { sendConfirmationEmail } from './modules/user/SendConfirmationEmail'
-import { ConfirmationResolver } from './modules/registration/Confirmation'
 
 async function main() {
   await createConnection()

@@ -1,9 +1,9 @@
 import { Resolver, Mutation, Arg } from 'type-graphql'
-import { User } from '../../entities/User'
-import { ChangePasswordInput } from './changePassword/ChangePasswordInput'
-import { redis } from '../../redis'
-import { createRecoverPasswordToken } from './RecoverPassword'
-import { createHashedPassword } from './createHashedPassword'
+import { User } from '../../../../entities/User'
+import { ChangePasswordInput } from './ChangePasswordInput'
+import { redis } from '../../../../redis'
+import { createRecoverPasswordToken } from '../RecoverPassword'
+import { createHashedPassword } from '../createHashedPassword'
 
 @Resolver()
 export class ChangePasswordResolver {

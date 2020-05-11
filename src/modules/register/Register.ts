@@ -3,8 +3,8 @@ import { User } from '../../entities/User'
 import { RegistInput } from './RegisterInput'
 import Argon from 'argon2'
 import { isAuthorized } from '../middleware/IsAuthorized'
-import { sendConfirmationEmail } from './SendConfirmationEmail'
-import createConfirmationUrl from '../registration/createConfirmationUrl'
+import { sendConfirmationEmail } from '../user/SendConfirmationEmail'
+import createConfirmationUrl from './createConfirmationUrl'
 
 @Resolver()
 export class RegisterResolver {

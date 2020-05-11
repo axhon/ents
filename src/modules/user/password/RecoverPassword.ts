@@ -1,9 +1,9 @@
 import { Resolver, Mutation, Arg } from 'type-graphql'
 import { v4 } from 'uuid'
-import { User } from '../../entities/User'
-import { redis } from '../../redis'
-import { sendConfirmationEmail } from './SendConfirmationEmail'
-import { RECOVER_PASSWORD_PREFIX } from '../constants/redisPrefixes'
+import { User } from '../../../entities/User'
+import { redis } from '../../../redis'
+import { sendConfirmationEmail } from '../SendConfirmationEmail'
+import { RECOVER_PASSWORD_PREFIX } from '../../constants/redisPrefixes'
 
 async function createRecoveryEmail(token: string) {
   return `http://localhost:3000/u/confirm/${token}`
