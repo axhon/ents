@@ -18,7 +18,7 @@ export class RegisterResolver {
   async register(
     @Arg('data') { firstName, lastName, email, password }: RegistInput
   ): Promise<User> {
-    const hashedPassword = await Argon.hash(password, { saltLength: 12 })
+    const hashedPassword = await Argon.hash(password, { saltLength: 12 }) // secure
     const user = await User.create({
       firstName,
       lastName,
